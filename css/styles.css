@@ -8,7 +8,17 @@ div.row div {
 		width: 100px;
 		height: 100px;
 		}
-					
+
+.bl { 
+	background-color: black;
+	width: 100px;
+	height: 100px;
+	 }
+.wh { 
+	background-color: white;
+	width: 100px;
+	height: 100px;
+	 }
 div.row div.bl { background-color: black; }
 div.row div.wh { background-color: white; }
 
@@ -23,3 +33,4 @@ div.row:after {
 		display: block;
 		clear: both;
 		}
+

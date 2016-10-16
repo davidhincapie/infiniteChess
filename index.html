@@ -4,50 +4,44 @@
 		<meta charset="UTF-8"/>
 		<title>Checkerboard</title>
 		<link rel="stylesheet" href="css/styles.css">
+
 	</head>
 
 	<body>
-		<div id="board">
-		
-			<div class="row">
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-			</div>
+		<script type="text/javascript">
+			var size = 6;
+
+		function makeDiv(className) {
+			var div = document.createElement("div");
+			div.className = className;
+
+			return div;
+		}
+
+		function diffColor(x, y){
+			if (x % 2 === 0 && y % 2 === 0) {
+				return "bl";
+			} else if (x % 2 === 1 && y % 2 === 1) {
+				return "bl";
+			} else if (x % 2 === 0 && y % 2 === 1) {
+				return "wh";
+			} else  {
+				return "wh";
+			}
+		}
+
+		for (x = 0; x < size; x++) {
+			var row = makeDiv("row");
 			
-			<div class="row">
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-			</div>
+			for (y = 0; y < size; y++) {
+				row.appendChild(makeDiv(diffColor(x, y)));
+			} 
+			document.body.appendChild(row);
+		}
 
-			<div class="row">
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-			</div>
 
-			<div class="row">
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-			</div>
 
-			<div class="row">
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-				<div class="wh"></div>
-				<div class="bl"></div>
-			</div>
-		</div>
+
+		</script>
 	</body>
 </html>
